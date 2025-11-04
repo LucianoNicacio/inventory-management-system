@@ -52,6 +52,21 @@
                 </li>
                 
                 <li>
+                    <a href="#Warehouse" data-bs-toggle="collapse">
+                        <i data-feather="users"></i>
+                        <span> Warehouse Manage </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="Warehouse">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.warehouse') }}" class="tp-link">All Warehouses</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                
+                <li>
                     <a href="#sidebarError" data-bs-toggle="collapse">
                         <i data-feather="alert-octagon"></i>
                         <span> Error Pages </span>

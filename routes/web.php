@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Backend\WarehouseController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\BrandController;
@@ -37,5 +38,16 @@ Route::middleware('auth')->group(function () {
         Route::get('/edit/brand/{id}', 'EditBrand')->name('edit.brand');
         Route::post('/update/brand', 'UpdateBrand')->name('update.brand');
         Route::get('/delete/brand/{id}', 'DeleteBrand')->name('delete.brand');
+    });
+});
+
+Route::middleware('auth')->group(function () {
+    Route::controller(WarehouseController::class)->group(function () {
+        Route::get('/all/warehouse', 'AllWarehouse')->name('all.warehouse');
+        Route::get('/add/warehouse', 'AddWarehouse')->name('add.warehouse');
+        Route::post('/store/warehouse', 'StoreWarehouse')->name('store.warehouse');
+        Route::get('/edit/warehouse/{id}', 'EditWarehouse')->name('edit.warehouse');
+        Route::post('/update/warehouse', 'UpdateWarehouse')->name('update.warehouse');
+        Route::get('/delete/warehouse/{id}', 'DeleteWarehouse')->name('delete.warehouse');
     });
 });
