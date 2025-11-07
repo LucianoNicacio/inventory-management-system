@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\CustomerController;
+use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SupplierController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Backend\WarehouseController;
@@ -73,5 +74,15 @@ Route::middleware('auth')->group(function () {
         Route::get('/edit/customer/{id}', 'EditCustomer')->name('edit.customer');
         Route::post('/update/customer', 'UpdateCustomer')->name('update.customer');
         Route::get('/delete/customer/{id}', 'DeleteCustomer')->name('delete.customer');
+    });
+});
+
+Route::middleware('auth')->group(function () {
+    Route::controller(ProductController::class)->group(function () {
+        Route::get('/all/category', 'AllCategory')->name('all.category');
+        Route::post('/store/category', 'StoreCategory')->name('store.category');
+        Route::get('/edit/category/{id}', 'EditCategory');
+        Route::post('/update/category', 'UpdateCategory')->name('update.category');
+        Route::get('/delete/category/{id}', 'DeleteCategory')->name('delete.category');
     });
 });
