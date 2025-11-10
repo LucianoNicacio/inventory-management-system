@@ -107,6 +107,9 @@
                             <li>
                                 <a href="{{ route('all.category') }}" class="tp-link">All Categories</a>
                             </li>
+                            <li>
+                                <a href="{{ route('all.product') }}" class="tp-link">All Products</a>
+                            </li>
                         </ul>
                     </div>
                 </li>
